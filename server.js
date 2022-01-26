@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/author', AuthorRoute);
 app.use('/qrcode', QrcodeRoute);
-app.use('/', function () {
+app.use('/', function (req, res) {
     res.send({
         code: 404,
         message: '未匹配路由'
